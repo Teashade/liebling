@@ -23,12 +23,4 @@ RUN ghost config mailpass $MAIL_PASS
 COPY . /var/lib/ghost/content/themes/liebling
 RUN rm -rf /var/lib/ghost/content/themes/casper
 
-# WORKDIR /var/lib/ghost/content/data/
-
-# RUN apt-get update && apt-get install -y sqlite3 libsqlite3-dev
-
-# RUN ls
-
-# RUN echo 'update settings set value='liebling' where key = "activeTheme";' | sqlite3 ghost.db
-
 CMD ["node", "current/index.js"]
