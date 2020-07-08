@@ -24,6 +24,6 @@ RUN ls
 
 COPY . /var/lib/ghost/content/themes/liebling
 
-RUN echo 'update settings set value='liebling' where key = 'activeTheme';' | sqlite3 /var/lib/ghost/content/data/ghost.db
+RUN echo 'update settings set value='liebling' where key = "activeTheme";' | sqlite3 /var/lib/ghost/content/data/ghost.db
 
 CMD ["node", "current/index.js"]
