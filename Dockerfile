@@ -20,4 +20,8 @@ RUN ghost config mailservice $MAIL_HOST
 RUN ghost config mailuser $MAIL_USER
 RUN ghost config mailpass $MAIL_PASS
 
+RUN ls
+
+COPY . /var/lib/ghost/content/themes/liebling
+
 CMD ["node", "current/index.js"]
