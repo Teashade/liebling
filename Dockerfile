@@ -24,6 +24,7 @@ RUN ls
 
 COPY . /var/lib/ghost/content/themes/liebling
 
+RUN apt-get update && apt-get install -y sqlite3 libsqlite3-dev
 RUN echo 'update settings set value='liebling' where key = "activeTheme";' | sqlite3 /var/lib/ghost/content/data/ghost.db
 
 CMD ["node", "current/index.js"]
